@@ -12,6 +12,13 @@ final readonly class CreateTicketData
         private string $authorEmail,
     ) {}
 
+    /**
+     * @param array{
+     *     title: string,
+     *     description: string,
+     *     author_email: string
+     * } $data
+     */
     public static function fromArray(array $data): self
     {
         return new self(

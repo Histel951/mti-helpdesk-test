@@ -8,7 +8,7 @@ use RuntimeException;
 
 final class TicketNotFoundException extends RuntimeException
 {
-    public function __construct(int $id)
+    public function __construct()
     {
         parent::__construct(
             message: 'Ticket not found.',

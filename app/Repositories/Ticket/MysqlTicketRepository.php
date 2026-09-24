@@ -27,7 +27,7 @@ final class MysqlTicketRepository implements TicketRepositoryInterface
         );
 
         if ($ticket === null) {
-            throw new TicketNotFoundException($id);
+            throw new TicketNotFoundException();
         }
 
         return $ticket;

@@ -16,6 +16,15 @@ final readonly class TicketIndexQuery
         private int $page,
     ) {}
 
+    /**
+     * @param array{
+     *     status?: string,
+     *     q?: string|null,
+     *     sort?: string,
+     *     per_page?: int|string,
+     *     page?: int|string
+     * } $data
+     */
     public static function fromArray(array $data): self
     {
         return new self(

@@ -14,6 +14,13 @@ final readonly class TicketEvent
         private ?TicketStatus $status,
     ) {}
 
+    /**
+     * @param array{
+     *     id: int,
+     *     version: int,
+     *     status?: string|null
+     * } $data
+     */
     public static function fromArray(array $data): self
     {
         return new self(

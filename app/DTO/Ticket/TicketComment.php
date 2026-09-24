@@ -11,6 +11,12 @@ final readonly class TicketComment
         private string $author,
     ) {}
 
+    /**
+     * @param array{
+     *     message: string,
+     *     author: string
+     * } $data
+     */
     public static function fromArray(array $data): self
     {
         return new self(

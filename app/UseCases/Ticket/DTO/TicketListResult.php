@@ -8,6 +8,9 @@ use App\DTO\Ticket\TicketListItem;
 
 final readonly class TicketListResult
 {
+    /**
+     * @param array<int, TicketListItem> $items
+     */
     public function __construct(
         private int $page,
         private int $perPage,

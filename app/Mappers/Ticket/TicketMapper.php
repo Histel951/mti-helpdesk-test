@@ -30,8 +30,8 @@ class TicketMapper
     /**
      * Преобразование строк из БД в array<TicketListItem>
      *
-     * @param array $rows
-     * @return array<TicketListItem>
+     * @param array<int, object> $rows
+     * @return array<int, TicketListItem>
      * @throws DateMalformedStringException
      */
     public function rowsToListItems(array $rows): array

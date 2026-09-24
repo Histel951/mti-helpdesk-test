@@ -56,6 +56,9 @@ class StoreTicketEventRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return array<int, callable(Validator): void>
+     */
     public function after(): array
     {
         return [

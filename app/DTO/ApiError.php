@@ -9,6 +9,9 @@ use Illuminate\Http\JsonResponse;
 
 final readonly class ApiError
 {
+    /**
+     * @param array<string, mixed>|null $details
+     */
     public function __construct(
         private ApiErrorCode $code,
         private string $message,
