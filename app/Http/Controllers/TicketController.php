@@ -19,19 +19,22 @@ use App\UseCases\Ticket\ApplyTicketEventUseCase;
 use App\UseCases\Ticket\CreateTicketUseCase;
 use App\UseCases\Ticket\DTO\TicketEvent;
 use App\UseCases\Ticket\ListTicketsUseCase;
+use Illuminate\Http\JsonResponse;
 
 class TicketController extends Controller
 {
     public function store(
         StoreTicketRequest  $request,
         CreateTicketUseCase $useCase,
-    ): TicketCreatedResource
+    ): JsonResponse
     {
-        return new TicketCreatedResource(
+        $resource = new TicketCreatedResource(
             $useCase->execute(
                 CreateTicketData::fromArray($request->validated())
             )
         );
+
+        return $resource->response()->setStatusCode(201);
     }
 
     public function show(Ticket $ticket): TicketResource

@@ -10,7 +10,7 @@ use App\Enums\TicketStatus;
 use DateMalformedStringException;
 use DateTimeImmutable;
 
-final class TicketMapper
+class TicketMapper
 {
     /**
      * Преобразование строки БД в объект состояния тикета
